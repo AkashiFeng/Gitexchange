@@ -165,7 +165,7 @@ $_SESSION["btc_uniq"] = md5(uniqid(mt_rand(),true));
                         You can review and edit your personal information at any time by logging in to your account and clicking Settings or My Account tab. If you deactivate your <?= $CFG->exchange_name; ?> account, we will mark your account in our database as "Deactivate" but will keep your account information in our database. This is necessary in order to deter fraud, by ensuring that persons who try to commit fraud will not be able to avoid detection simply by closing their account and opening a new account. However, if you close your account, your identifiable information will not be used by us for any further purposes, nor sold or shared with third parties, except as necessary to prevent fraud as required by law or in accordance with this Privacy Policy.
                     </p>
                     <h5 class="m-b-1em">How you can contact us about privacy questions</h5>
-                    <p>If you have questions or concerns regarding this policy, you should contact us on our support page or by writing to us at <a href="mailto:contact@bitexchange.systems">contact@bitexchange.systems</a></p>
+                    <p>If you have questions or concerns regarding this policy, you should contact us on our support page or by writing to us at <a href="#">contact@bitexchange.systems</a></p>
                 </div>
             </div>
        </div>

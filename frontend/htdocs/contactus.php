@@ -110,7 +110,7 @@ $_SESSION["btc_uniq"] = md5(uniqid(mt_rand(),true));
                                 <p class="m-b-0"><b>Office Hours:</b></p>
                                 <p>Monday - Friday, 10:00 - 21:00 IST</p>
                                 <p class="m-b-0"><b>E-Mail:</b></p>
-                                <p>General :<a href="mailto:contact@bitexchange.systems">contact@bitexchange.systems</a></p>
+                                <p>General :<a href="#">contact@bitexchange.systems</a></p>
                              </div>
                         </div>
                    </div>

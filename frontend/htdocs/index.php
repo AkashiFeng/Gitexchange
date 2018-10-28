@@ -90,22 +90,22 @@
                     <div class="row">
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                             <div class="banner-images">
-                                <a href="https://bitexchange.systems/cryptocurrency-wallet-script/" target="_blank" rel="nofollow"><img src="sonance/img/banner/1.png"></a>
+                                <a href="#" target="_blank" rel="nofollow"><img src="sonance/img/banner/1.png"></a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                             <div class="banner-images">
-                                <a href="https://bitexchange.systems/bitcoin-exchange-android-app-theme/" target="_blank" rel="nofollow"><img src="sonance/img/banner/2.png"></a>
+                                <a href="#" target="_blank" rel="nofollow"><img src="sonance/img/banner/2.png"></a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                             <div class="banner-images">
-                                <a href="https://bitexchange.live/api-docs.php" target="_blank" rel="nofollow"><img src="sonance/img/banner/3.png"></a>
+                                <a href="#" target="_blank" rel="nofollow"><img src="sonance/img/banner/3.png"></a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                             <div class="banner-images">
-                                <a href="http://bitcoinscript.bitexchange.systems/2018/01/cryptocurrency-exchange-software-security.html" target="_blank" rel="nofollow"><img src="sonance/img/banner/4.png"></a>
+                                <a href="#" target="_blank" rel="nofollow"><img src="sonance/img/banner/4.png"></a>
                             </div>
                         </div>
                     </div>

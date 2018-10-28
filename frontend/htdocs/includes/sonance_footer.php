@@ -23,7 +23,7 @@
                     <ul>
                         <li><a href="https://www.facebook.com/bitcoin.exchange.script" rel="nofollow" target="_blank"><i class=""><i class="fab fa-facebook-f"></i></a></li>
                         <li><a href="https://twitter.com/ExchangeScript" rel="nofollow" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href=" https://bitcoinscript.bitexchange.systems/" rel="nofollow" target="_blank"><i class="fab fa-medium-m"></i></a></li>
+                        <li><a href="#" rel="nofollow" target="_blank"><i class="fab fa-medium-m"></i></a></li>
                     </ul>
                 </div>
             </div>
