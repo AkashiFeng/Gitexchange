@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TREZOR Get XPUB Key</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+    input[type="text"]:disabled {
+        background: #dddddd;
+    }
+    </style>
+    <script>
+
+    function trezorGetXPubKey() {
+        var path = document.getElementById('account_path').value;
+        var coin = document.getElementById('coin').value;
+
+        if (path.lenght < 1 || document.getElementById('account_path').disabled) path = null;
+
+        // var path = [44 | 0x80000000,
+        //             0  | 0x80000000,
+        //             0  | 0x80000000 ]; // path in raw form
+
+        TrezorConnect.setCurrency(coin); // set backend
+        TrezorConnect.getXPubKey(path, function (response) {
+            if (response.success) {
+                console.log('XPUB:', response.xpubkey); // serialized XPUB
+                console.log('Raw path:', response.path);
+                console.log('Serialized path:', response.serializedPath);
+            } else {
+                console.error('Error:', response.error); // error message
+            }
+            document.getElementById("response").innerHTML = JSON.stringify(response, undefined, 2);
+        });
+    }
+
+    function handleCoinChange() {
+
+        var defaultPaths = {
+            "Bitcoin":       "m/49'/0'/0'",
+            "Bitcoin Cash":  "m/44'/145'/0'",
+            "Litecoin":      "m/49'/2'/0'",
+            "Dogecoin":      "m/44'/3'/0'",
+            "Dash":          "m/44'/5'/0'",
+            "Zcash":         "m/44'/133'/0'",
+            "Testnet":       "m/49'/1'/0'",
+            "Namecoin":      "m/44'/7'/0'",
+        }
+
+        var coin = document.getElementById('coin').value;
+        document.getElementById('account_path').value = defaultPaths[coin];
+
+        var checkbox = document.getElementById('discovery')
+        if (coin === 'Dogecoin' || coin === 'Namecoin') {
+            checkbox.checked = false;
+            checkbox.disabled = true;
+            document.getElementById('account_path').disabled = false;
+        } else {
+            checkbox.disabled = false;
+        }
+    }
+
+    function handleDiscoveryChange(element) {
+        document.getElementById('account_path').disabled = element.checked;
+    }
+
+    </script>
+  </head>
+  <body>
+<div class="container" style="margin-top: 50px;">
+  <h1 style="text-align: center;padding-bottom: 10px;">Trezor Wallet</h1>
+    <span id="xpubkey" style="margin-left: 320px;">
+    <a href="xpubkey.html" class="btn btn-primary">Export public key</a>
+    <a href="accountinfo.html" class="btn btn-primary">Account Info</a>
+    <a href="getaddress.html" class="btn btn-primary">Get Address</a>
+    <a href="composetx.html" class="btn btn-primary">Compose Transaction</a>
+    </span>
+  <h2>Export Xpub Key</h2>
+  <form class="form-horizontal" action="">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="email">Select Coin:</label>
+      <div class="col-sm-10">
+        <select id="coin" class="form-control" onchange="handleCoinChange()">
+        <option selected>Bitcoin</option>
+        <option>Bitcoin Cash</option>
+        <option>Litecoin</option>
+        <option>Dogecoin</option>
+        <option>Dash</option>
+        <option>Zcash</option>
+        <option>Testnet</option>
+        <option>Namecoin</option>
+    </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">Account Path:</label>
+      <div class="col-sm-10">          
+        <input id="account_path" type="text" value="m/49'/0'/0'" class="form-control" />
+      </div>
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <div class="checkbox">
+          <label><input type="checkbox" id="discovery" onchange="handleDiscoveryChange(this)"> Discover Account</label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="button" onclick="trezorGetXPubKey()" class="btn btn-warning">Get XPUB key</button>
+      </div>
+    </div>
+  </form>
+  
+    <pre id="response" style="background-color: #fff !important;border:0px !important;"></pre>
+</div>
+
+    <script src="../connect.js"></script>
+
+  </body>
+</html>
